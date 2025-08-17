@@ -16,7 +16,7 @@ public class MyDbContext : DbContext
         modelBuilder.Entity<User>(e =>
         {
             e.HasKey(u => u.Id).HasName("PRIMARY");
-            e.ToTable("Users");
+            e.ToTable("users");
             
             e.Property(u => u.Id).HasColumnName("id");
             e.Property(u => u.Name).HasColumnName("name").IsRequired().HasMaxLength(50);
@@ -26,6 +26,20 @@ public class MyDbContext : DbContext
 
             e.Property(u => u.Role).HasColumnName("role").HasConversion<string>();
         });
+
+        modelBuilder.Entity<Metrics>(e =>
+        {
+            e.HasKey(m => m.Id).HasName("PRIMARY");
+            e.ToTable("metrics");
+            
+            e.Property(m => m.Id).HasColumnName("id");
+            e.Property(m => m.Uuid).HasColumnName("uuid").IsRequired();
+            e.Property(m => m.Ip).HasColumnName("ip").IsRequired();
+            e.Property(m => m.Cpu).HasColumnName("cpu");
+            e.Property(m => m.Ram).HasColumnName("ram");
+            e.Property(m => m.ReceivedAt).HasColumnName("received_at");
+        });
+        
     }
     
 }

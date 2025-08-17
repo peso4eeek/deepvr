@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="UserShell/App.axaml" value="UserShell/UserShell.csproj" />
+        <entry key="UserShell/Views/Login.axaml" value="UserShell/UserShell.csproj" />
+        <entry key="UserShell/Views/LoginView.axaml" value="UserShell/UserShell.csproj" />
+        <entry key="UserShell/Views/MainWindow.axaml" value="UserShell/UserShell.csproj" />
+        <entry key="UserShell/Views/MetricsView.axaml" value="UserShell/UserShell.csproj" />
+        <entry key="UserShell/Views/RegisterView.axaml" value="UserShell/UserShell.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

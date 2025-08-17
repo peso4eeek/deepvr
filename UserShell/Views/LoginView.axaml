@@ -1,0 +1,94 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:UserShell.ViewModels"
+             x:Class="UserShell.Views.LoginView"
+             x:DataType="vm:LoginViewModel">
+
+	<Grid Background="White">
+		<!-- Основной контейнер -->
+		<Border Background="#E3F2FD" 
+		        CornerRadius="20" 
+		        Margin="40" 
+		        Padding="40">
+			
+			<StackPanel Spacing="20">
+				<!-- Заголовок -->
+				<TextBlock Text="Вход" 
+				           FontSize="28" 
+				           FontWeight="Bold" 
+				           Foreground="#1565C0" 
+				           HorizontalAlignment="Left"/>
+				
+				<!-- Поле Email -->
+				<Border Background="White" 
+				        BorderBrush="#1565C0" 
+				        BorderThickness="1" 
+				        CornerRadius="8" 
+				        Padding="12">
+					<TextBox Watermark="Email*" 
+					         Text="{Binding UserName, Mode=TwoWay}" 
+					         Background="Transparent" 
+					         BorderThickness="0" 
+					         FontSize="16"/>
+				</Border>
+				
+				<!-- Поле пароля -->
+				<Border Background="White" 
+				        BorderBrush="#1565C0" 
+				        BorderThickness="1" 
+				        CornerRadius="8" 
+				        Padding="12">
+					<Grid ColumnDefinitions="*,Auto">
+						<TextBox Grid.Column="0" 
+						         Watermark="Пароль*" 
+						         Text="{Binding Password, Mode=TwoWay}" 
+						         Background="Transparent" 
+						         BorderThickness="0" 
+						         FontSize="16" 
+						         PasswordChar="•"/>
+						<PathIcon Grid.Column="1" 
+						          Data="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" 
+						          Foreground="#1565C0" 
+						          Width="20" 
+						          Height="20"/>
+					</Grid>
+				</Border>
+				
+				<!-- Забыли пароль -->
+				<TextBlock Text="Забыли пароль?" 
+				           Foreground="#1565C0" 
+				           FontSize="14" 
+				           HorizontalAlignment="Right"/>
+				
+				<!-- Сообщение об ошибке -->
+				<TextBlock Foreground="Red" 
+				           TextWrapping="Wrap" 
+				           Text="{Binding ErrorMessage}" 
+				           HorizontalAlignment="Center"/>
+				
+				<!-- Кнопка входа -->
+				<Button Command="{Binding LoginCommand}" 
+				        Background="#4CAF50" 
+				        Foreground="White" 
+				        CornerRadius="12" 
+				        Padding="16,12" 
+				        FontSize="16" 
+				        FontWeight="Bold">
+					<TextBlock Text="ВОЙТИ"/>
+				</Button>
+				
+				<!-- Ссылка на регистрацию -->
+				<Button Command="{Binding GoToRegisterCommand}" 
+				        Background="Transparent" 
+				        Foreground="#1565C0" 
+				        BorderThickness="0" 
+				        Padding="0" 
+				        FontSize="14">
+					<TextBlock Text="Нет аккаунта? Зарегестрироваться" 
+					           TextDecorations="Underline"/>
+				</Button>
+			</StackPanel>
+		</Border>
+	</Grid>
+
+</UserControl>

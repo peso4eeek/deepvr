@@ -16,7 +16,7 @@ public class AuthService(MyDbContext context, IConfiguration configuration) : IA
     {
         var user = await context.Users.SingleOrDefaultAsync(u => u.Name.Equals(authRequest.Name));
 
-        if (user == null || BCrypt.Net.BCrypt.Verify(authRequest.Password, user.Password))
+        if (user == null || !BCrypt.Net.BCrypt.Verify(authRequest.Password, user.Password))
         {
             throw new AuthenticationException("Неверное имя пользователя или пароль");
         }
@@ -37,7 +37,7 @@ public class AuthService(MyDbContext context, IConfiguration configuration) : IA
     {
         if (await context.Users.AnyAsync(u => u.Name.Equals(authRequest.Name)))
         {
-            throw new AuthenticationException("user already exists");
+            throw new AuthenticationException("Пользователь с такими данными уже существует");
         }
 
         var user = new User()
@@ -46,6 +46,7 @@ public class AuthService(MyDbContext context, IConfiguration configuration) : IA
             Password = BCrypt.Net.BCrypt.HashPassword(authRequest.Password),
         };
         context.Users.Add(user);
+        await context.SaveChangesAsync();
         return user;
     }
     private string GenerateAccessToken(User user)
@@ -56,7 +57,7 @@ public class AuthService(MyDbContext context, IConfiguration configuration) : IA
             new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
         };
         
-        var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JwtSettings: SecretKey"]!));
+        var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JwtSettings:SecretKey"]));
 
         var credentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
 

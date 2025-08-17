@@ -35,11 +35,15 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-app.UseHttpsRedirection();
+// В Development режиме отключаем HTTPS редирект
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
+
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
-app.UseAuthentication();
 
-app.UseHttpsRedirection();
 app.Run();
 

@@ -1,0 +1,15 @@
+C:\Users\Я\RiderProjects\deepvr\DeepVrLibrary\bin\Debug\net9.0\DeepVrLibrary.deps.json
+C:\Users\Я\RiderProjects\deepvr\DeepVrLibrary\bin\Debug\net9.0\DeepVrLibrary.runtimeconfig.json
+C:\Users\Я\RiderProjects\deepvr\DeepVrLibrary\bin\Debug\net9.0\DeepVrLibrary.dll
+C:\Users\Я\RiderProjects\deepvr\DeepVrLibrary\bin\Debug\net9.0\DeepVrLibrary.pdb
+C:\Users\Я\RiderProjects\deepvr\DeepVrLibrary\obj\Debug\net9.0\DeepVrLibrary.csproj.AssemblyReference.cache
+C:\Users\Я\RiderProjects\deepvr\DeepVrLibrary\obj\Debug\net9.0\DeepVrLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Я\RiderProjects\deepvr\DeepVrLibrary\obj\Debug\net9.0\DeepVrLibrary.AssemblyInfoInputs.cache
+C:\Users\Я\RiderProjects\deepvr\DeepVrLibrary\obj\Debug\net9.0\DeepVrLibrary.AssemblyInfo.cs
+C:\Users\Я\RiderProjects\deepvr\DeepVrLibrary\obj\Debug\net9.0\DeepVrLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Я\RiderProjects\deepvr\DeepVrLibrary\obj\Debug\net9.0\DeepVrLibrary.sourcelink.json
+C:\Users\Я\RiderProjects\deepvr\DeepVrLibrary\obj\Debug\net9.0\DeepVrLibrary.dll
+C:\Users\Я\RiderProjects\deepvr\DeepVrLibrary\obj\Debug\net9.0\refint\DeepVrLibrary.dll
+C:\Users\Я\RiderProjects\deepvr\DeepVrLibrary\obj\Debug\net9.0\DeepVrLibrary.pdb
+C:\Users\Я\RiderProjects\deepvr\DeepVrLibrary\obj\Debug\net9.0\DeepVrLibrary.genruntimeconfig.cache
+C:\Users\Я\RiderProjects\deepvr\DeepVrLibrary\obj\Debug\net9.0\ref\DeepVrLibrary.dll
