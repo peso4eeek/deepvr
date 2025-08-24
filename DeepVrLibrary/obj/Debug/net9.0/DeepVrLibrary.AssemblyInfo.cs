@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DeepVrLibrary")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e5e11a853c66a9e156958dbb89d8561a1e9ec38f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+794ee9ace7533ebf66d1388fc2c518fdc82cb5eb")]
 [assembly: System.Reflection.AssemblyProductAttribute("DeepVrLibrary")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DeepVrLibrary")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

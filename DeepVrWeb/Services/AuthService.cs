@@ -10,8 +10,10 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace DeepVrWeb.Services;
 
+
 public class AuthService(MyDbContext context, IConfiguration configuration) : IAuthService
 {
+    
     public async Task<AuthResponse> Login(AuthRequest authRequest)
     {
         var user = await context.Users.SingleOrDefaultAsync(u => u.Name.Equals(authRequest.Name));

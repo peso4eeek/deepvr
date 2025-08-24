@@ -1,4 +1,5 @@
 using DeepVrLibrary;
+using DeepVrWeb.Controllers;
 using DeepVrWeb.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -24,8 +25,10 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-
 builder.Services.AddTransient<IAuthService, AuthService>();
+builder.Services.AddTransient<IMetricsService, MetricsService>();
+builder.Services.AddSignalR();
+
 var app = builder.Build();
 
 app.UseRouting();
@@ -44,6 +47,8 @@ if (!app.Environment.IsDevelopment())
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
+app.MapHub<MetricsHub>("api/metrics-stream");
+app.UseCors("AllowAll");
+app.Run("http://0.0.0.0:5100");
 
-app.Run();
-
+//http://0.0.0.0/api/metrics-stream
